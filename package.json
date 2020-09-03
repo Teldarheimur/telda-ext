@@ -1,0 +1,25 @@
+{
+    "name": "telda-ext",
+    "displayName": "Telda Highligher",
+    "description": "Telda assembler syntax highlighting",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "telda",
+            "aliases": ["Telda", "telda"],
+            "extensions": [".telda"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "telda",
+            "scopeName": "source.telda",
+            "path": "./syntaxes/telda.tmLanguage.json"
+        }]
+    }
+}

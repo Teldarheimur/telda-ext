@@ -1,0 +1,88 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Telda",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#registers"
+        },
+        {
+            "include": "#labels"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#chars"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.number-sign.telda",
+                "match": "^\\s*#.*$"
+            }]
+        },
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.other.telda",
+                "match": "\\b(start|include|data?)\\b"
+            }]
+        },
+        "registers": {
+            "patterns": [{
+                "name": "variable.parameter.telda",
+                "match": "\\$\\w+([+-]\\d{1,4}|)\\b"
+            }]
+        },
+        "labels": {
+            "patterns": [{
+                "name": "entity.name.function.telda",
+                "match": "^.*:$"
+            }] 
+        },
+        "instructions": {
+            "patterns": [{
+                "name": "entity.name.function.telda",
+                "match": "^\\s*(.*)\\b"
+            }] 
+        },
+        "numbers": {
+            "patterns": [{
+                "name": "constant.numeric.telda",
+                "match": "\\b(0x[0-9a-zA-Z]{1,4}|~?\\d+)\\b"
+            }] 
+        },
+        "strings": {
+            "name": "string.quoted.double.telda",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.telda",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "chars": {
+            "name": "string.quoted.single.telda",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.telda",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "source.telda"
+}
