@@ -9,10 +9,16 @@
             "include": "#keywords"
         },
         {
+            "include": "#directives"
+        },
+        {
             "include": "#registers"
         },
         {
             "include": "#labels"
+        },
+        {
+            "include": "#instructions"
         },
         {
             "include": "#numbers"
@@ -28,37 +34,43 @@
         "comments": {
             "patterns": [{
                 "name": "comment.line.number-sign.telda",
-                "match": "^\\s*#.*$"
+                "match": "^\\s*(#|\/\/|;).*$"
             }]
         },
         "keywords": {
             "patterns": [{
                 "name": "keyword.other.telda",
-                "match": "\\b(start|include|data?)\\b"
+                "match": "\\b_start\\b"
+            }]
+        },
+        "directives": {
+            "patterns": [{
+                "name": "keyword.other.telda",
+                "match": "^\\s*\\.\\w+\\b"
             }]
         },
         "registers": {
             "patterns": [{
                 "name": "variable.parameter.telda",
-                "match": "\\$\\w+([+-]\\d{1,4}|)\\b"
+                "match": "\\b(\\$\\w+|a|al|ah|b|bl|bh|c|cl|ch|io|x|y|z|s)\\b"
             }]
         },
         "labels": {
             "patterns": [{
-                "name": "entity.name.function.telda",
-                "match": "^.*:$"
+                "name": "entity.name.section.telda",
+                "match": "^.*:\\s"
             }] 
         },
         "instructions": {
             "patterns": [{
                 "name": "entity.name.function.telda",
-                "match": "^\\s*(.*)\\b"
+                "match": "^\\s*(\\w+)\\s"
             }] 
         },
         "numbers": {
             "patterns": [{
                 "name": "constant.numeric.telda",
-                "match": "\\b(0x[0-9a-zA-Z]{1,4}|~?\\d+)\\b"
+                "match": "\\b(0x[0-9a-zA-Z]{1,4}|\\d+(b|w)?)\\b"
             }] 
         },
         "strings": {
