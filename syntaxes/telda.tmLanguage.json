@@ -37,12 +37,6 @@
                 "match": "^\\s*(#|\/\/|;).*$"
             }]
         },
-        "keywords": {
-            "patterns": [{
-                "name": "keyword.other.telda",
-                "match": "\\b_start\\b"
-            }]
-        },
         "directives": {
             "patterns": [{
                 "name": "keyword.other.telda",
@@ -52,7 +46,7 @@
         "registers": {
             "patterns": [{
                 "name": "variable.parameter.telda",
-                "match": "\\b(\\$\\w+|a|al|ah|b|bl|bh|c|cl|ch|io|x|y|z|s)\\b"
+                "match": "\\b(rs|rl|rf|rp|rh|rpc|r\\d+(l|h|b|))\\b"
             }]
         },
         "labels": {
@@ -70,7 +64,7 @@
         "numbers": {
             "patterns": [{
                 "name": "constant.numeric.telda",
-                "match": "\\b(0x[0-9a-zA-Z]{1,4}|\\d+(b|w)?)\\b"
+                "match": "\\b((0b[0-1]{1,16}|0o[1-7]{1,7}|0x[0-9a-fA-F]{1,4}|\\d+)(b|w)?)\\b"
             }] 
         },
         "strings": {
